@@ -6,7 +6,7 @@ metadata:
   name: mq-spring-app
   labels:
     app.kubernetes.io/name: mq-spring-app
-    helm.sh/chart: mq-spring-app-1.0.0-rc0.0.1
+    helm.sh/chart: mq-spring-app-1.0.0-rc0.0.2
     app.kubernetes.io/instance: mq-spring-app
     app: mq-spring-app
 spec:
