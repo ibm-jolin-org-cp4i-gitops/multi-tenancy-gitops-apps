@@ -13,19 +13,19 @@ spec:
           name: "cel"
         params:
         - name: "filter"
-          value: "header.match('X-GitHub-Event', 'push') && body.ref == 'refs/heads/qm1-ibm-jolin-org-cp4i-gitops' && body.repository.full_name == 'ibm-jolin-org-cp4i-gitops/mq-infra'"
+          value: "header.match('X-GitHub-Event', 'push') && body.ref == 'refs/heads/master' && body.repository.full_name == 'ibm-jolin-org-cp4i-gitops/mq-infra'"
     bindings:
       - ref: cnkt-trigger-binding
     template:
       ref: mq-infra-dev
-  # - name: mq-spring-app-dev
-  #   interceptors:
-  #     - ref:
-  #         name: "cel"
-  #       params:
-  #       - name: "filter"
-  #         value: "header.match('X-GitHub-Event', 'push') && body.ref == 'refs/heads/master' && body.repository.full_name == 'ibm-jolin-org-cp4i-gitops/mq-spring-app'"
-  #   bindings:
-  #     - ref: cnkt-trigger-binding
-  #   template:
-  #     ref: mq-spring-app-dev
+  - name: mq-spring-app-dev
+    interceptors:
+      - ref:
+          name: "cel"
+        params:
+        - name: "filter"
+          value: "header.match('X-GitHub-Event', 'push') && body.ref == 'refs/heads/mq-spring-ibm-jolin-org-cp4i-gitops' && body.repository.full_name == 'ibm-jolin-org-cp4i-gitops/mq-spring-app'"
+    bindings:
+      - ref: cnkt-trigger-binding
+    template:
+      ref: mq-spring-app-dev
