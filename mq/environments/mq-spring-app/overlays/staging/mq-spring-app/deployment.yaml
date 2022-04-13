@@ -5,11 +5,11 @@ kind: Deployment
 metadata:
   name: mq-spring-app
   annotations:
-    app.openshift.io/vcs-ref: c80f96633f0e0a17a8f178f21545c6b5a637377f
+    app.openshift.io/vcs-ref: 795c33dde7192e5c38978548b3c54c99a5ce52f9
     app.openshift.io/vcs-uri: https://github.com/ibm-jolin-org-cp4i-gitops/mq-spring-app
   labels:
     app.kubernetes.io/name: mq-spring-app
-    helm.sh/chart: mq-spring-app-1.0.0-rc0.0.4
+    helm.sh/chart: mq-spring-app-1.0.0-rc0.0.5
     app.kubernetes.io/instance: mq-spring-app
     app: mq-spring-app
     app.kubernetes.io/part-of: inventory
@@ -30,7 +30,7 @@ spec:
       volumes:
       containers:
         - name: mq-spring-app
-          image: "image-registry.openshift-image-registry.svc:5000/ci/mq-spring-app:0.0.4"
+          image: "image-registry.openshift-image-registry.svc:5000/ci/mq-spring-app:0.0.5"
           imagePullPolicy: IfNotPresent
           volumeMounts:
           ports:
